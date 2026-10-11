@@ -119,3 +119,18 @@ npm run dev
 ```
 
 ครั้งถัดไปใช้ `git switch try/04-selectors-solution` กลับงานตัวเองใช้ `git switch my/04-selectors` และติดตั้งใหม่
+
+
+## ไปบทถัดไปด้วย branch ใหม่
+
+Commit งานแม้ยังไม่เสร็จและจดจุดที่ต้องกลับมาฝึก แล้วหยุด dev server ด้วย Ctrl+C ไม่ต้องนำงานบทก่อนมารวม จุดเริ่มต้นใหม่มีคำตอบบทก่อนพร้อมแล้ว:
+
+```sh
+git add src
+git commit -m "เก็บงานก่อนย้ายบท"
+git switch -c my/05-derived-state origin/05-derived-state-lab
+npm ci
+npm run dev
+```
+
+ถ้ามี NOTES.md ให้ add และ commit ไฟล์นั้นด้วย หากไม่มีการเปลี่ยนแปลงไม่ต้อง commit ซ้ำ ใช้ local branch ให้ตัด `origin/` ออก หาก branch ส่วนตัวของบทถัดไปมีอยู่แล้วใช้ `git switch my/05-derived-state` ไม่สร้างซ้ำ จากนั้นอ่าน [โจทย์บทถัดไป](https://github.com/ArrayaWongsaita/dn_zustand/blob/05-derived-state-lab/course/lessons/05-derived-state.md)
