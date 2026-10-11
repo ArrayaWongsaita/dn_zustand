@@ -27,3 +27,6 @@ dist-ssr
 .agents
 AGENTS.md
 GLOSSARY.md
+
+playwright-report
+test-results
