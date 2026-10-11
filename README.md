@@ -1,17 +1,15 @@
-# React + Vite
+# คอร์ส Zustand ภาษาไทย
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+เรียนจัดการ state ผ่านร้านเครื่องเขียนหน้าเดียวด้วย React + Vite และ JavaScript
 
-Currently, two official plugins are available:
+เริ่ม [บทที่ 1: สร้าง store และอ่าน state](course/lessons/01-basic-store.md) และเตรียมเครื่องตาม [คู่มือเครื่องมือ](course/TOOLING.md) ก่อนวันเรียน
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+```bash
+npm ci
+npx playwright install chromium
+npm run dev
+```
 
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the Oxlint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
-# dn_zustand
+ตรวจคำตอบด้วย `npm run test:unit`, `npm run test:e2e`, `npm run check`
+Lab ตั้งต้นเปิดแอปได้และมี tests ไม่ผ่านตามโจทย์ ผู้เรียนต้องทำให้ผ่านทั้งหมดพร้อม checklist
+[รายการ branches สำหรับผู้ดูแล](course/branches.json) บันทึก failures ที่ยอมรับเฉพาะการตรวจ lab ตั้งต้น

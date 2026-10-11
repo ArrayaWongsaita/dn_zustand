@@ -1,0 +1,17 @@
+[
+  {
+    "branch": "01-basic-store-lab",
+    "lesson": 1,
+    "type": "lab",
+    "expectedFailures": {
+      "unit": ["store exposes the lesson initial cart items"],
+      "e2e": ["screen displays the lesson cart items and quantities"]
+    }
+  },
+  {
+    "branch": "01-basic-store-solution",
+    "lesson": 1,
+    "type": "solution",
+    "expectedFailures": { "unit": [], "e2e": [] }
+  }
+]
