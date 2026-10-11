@@ -6,14 +6,24 @@ export const useCartStore = create((set) => ({
     { id: 'pen', name: 'ปากกา', price: 20, quantity: 1 },
   ],
   addItem: (product) => set((state) => {
-    // TODO 1: รหัสซ้ำให้เพิ่ม quantity ในรายการเดิมแบบ immutable
-    if (state.items.some((item) => item.id === product.id)) return {}
+    if (state.items.some((item) => item.id === product.id)) {
+      return { items: state.items.map((item) => item.id === product.id
+        ? { ...item, quantity: item.quantity + 1 }
+        : item) }
+    }
     return { items: [...state.items, { ...product, quantity: 1 }] }
   }),
-  // TODO 2: เพิ่มจำนวนของรหัสที่รับมาโดยไม่แก้ object เดิม
-  increaseQuantity: (_id) => {},
-  // TODO 3: ลดจำนวนแต่หยุดที่ 1
-  decreaseQuantity: (_id) => {},
-  // TODO 4: ลบเฉพาะรหัสที่รับมา
-  removeItem: (_id) => {},
+  increaseQuantity: (id) => set((state) => ({
+    items: state.items.map((item) => item.id === id
+      ? { ...item, quantity: item.quantity + 1 }
+      : item),
+  })),
+  decreaseQuantity: (id) => set((state) => ({
+    items: state.items.map((item) => item.id === id
+      ? { ...item, quantity: Math.max(1, item.quantity - 1) }
+      : item),
+  })),
+  removeItem: (id) => set((state) => ({
+    items: state.items.filter((item) => item.id !== id),
+  })),
 }))
