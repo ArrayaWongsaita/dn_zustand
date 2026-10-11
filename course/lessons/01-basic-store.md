@@ -115,3 +115,18 @@ npm run dev
 ```
 
 ครั้งต่อไปใช้ `git switch try/01-basic-store-solution` โดยไม่สร้างซ้ำ ก่อนกลับให้ commit งานทดลองและหยุด dev server ด้วย Ctrl+C แล้วใช้ `git switch my/01-basic-store` ตามด้วย `npm ci` และ `npm run dev` เพื่อติดตั้งตาม lockfile และเปิดแอปของ branch เดิมใหม่ ใช้ขั้นตอนหยุด server และติดตั้งใหม่ทุกครั้งที่เปลี่ยนบทหรือสลับเฉลย
+
+
+## ไปบทถัดไปด้วย branch ใหม่
+
+Commit งานแม้ยังไม่เสร็จและจดจุดที่ต้องกลับมาฝึก แล้วหยุด dev server ด้วย Ctrl+C ไม่ต้องนำงานบทก่อนมารวม จุดเริ่มต้นใหม่มีคำตอบบทก่อนพร้อมแล้ว:
+
+```sh
+git add src
+git commit -m "เก็บงานก่อนย้ายบท"
+git switch -c my/02-actions origin/02-actions-lab
+npm ci
+npm run dev
+```
+
+ถ้ามี NOTES.md ให้ add และ commit ไฟล์นั้นด้วย หากไม่มีการเปลี่ยนแปลงไม่ต้อง commit ซ้ำ ใช้ local branch ให้ตัด `origin/` ออก หาก branch ส่วนตัวของบทถัดไปมีอยู่แล้วใช้ `git switch my/02-actions` ไม่สร้างซ้ำ จากนั้นอ่าน [โจทย์บทถัดไป](https://github.com/ArrayaWongsaita/dn_zustand/blob/02-actions-lab/course/lessons/02-actions.md)
