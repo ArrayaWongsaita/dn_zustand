@@ -1,6 +1,6 @@
 # เฉลยบทที่ 2 — UI เรียก action
 
-อ่าน [โจทย์และ checklist](../lessons/02-actions.md) และลองทำก่อนเปิดเฉลย
+อ่าน [โจทย์และ checklist](https://github.com/ArrayaWongsaita/dn_zustand/blob/02-actions-lab/course/lessons/02-actions.md) และลองทำก่อนเปิดเฉลย
 
 ```js
 export const useCartStore = create((set) => ({
