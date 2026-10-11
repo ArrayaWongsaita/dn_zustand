@@ -174,5 +174,25 @@
       "unit": [],
       "e2e": []
     }
+  },
+  {
+    "branch": "09-review-bug",
+    "lesson": 9,
+    "type": "lab",
+    "expectedFailures": {
+      "unit": [
+        "increasing quantity preserves the previous cart and its item objects"
+      ],
+      "e2e": []
+    }
+  },
+  {
+    "branch": "09-review-solution",
+    "lesson": 9,
+    "type": "solution",
+    "expectedFailures": {
+      "unit": [],
+      "e2e": []
+    }
   }
 ]
