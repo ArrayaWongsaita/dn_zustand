@@ -67,5 +67,23 @@
       "unit": [],
       "e2e": []
     }
+  },
+  {
+    "branch": "04-selectors-lab",
+    "lesson": 4,
+    "type": "lab",
+    "expectedFailures": {
+      "unit": [],
+      "e2e": []
+    }
+  },
+  {
+    "branch": "04-selectors-solution",
+    "lesson": 4,
+    "type": "solution",
+    "expectedFailures": {
+      "unit": [],
+      "e2e": []
+    }
   }
 ]
