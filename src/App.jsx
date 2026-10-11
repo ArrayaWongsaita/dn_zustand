@@ -1,9 +1,9 @@
 import { products } from './data/products.js'
+import { useCartStore } from './stores/cart-store.js'
 import './cart.css'
 
 function CartItems() {
-  // TODO 2: อ่าน items จาก useCartStore แทน array ชั่วคราวนี้
-  const items = []
+  const { items } = useCartStore()
 
   return (
     <section aria-labelledby="cart-heading" className="cart-panel">
