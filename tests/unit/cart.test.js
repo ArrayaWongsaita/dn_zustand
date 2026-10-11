@@ -19,6 +19,15 @@ test('adding a new product creates a cart item with quantity one', () => {
   unchanged()
 })
 
+// These scenarios arrange their own cart through the public store API so the
+// behavior contract remains valid when later lessons change their initial cart.
+function prepareQuantityCart() {
+  useCartStore.setState({ items: [
+    { id: 'notebook', name: 'สมุด', price: 50, quantity: 2 },
+    { id: 'pen', name: 'ปากกา', price: 20, quantity: 1 },
+  ] })
+}
+
 // Observe only the store's public state, retaining the original array and every
 // original item reference so replacing the array cannot hide object mutation.
 function captureCart() {
@@ -32,6 +41,7 @@ function captureCart() {
 }
 
 test('adding an existing product increases its quantity without mutating previous items', () => {
+  prepareQuantityCart()
   const unchanged = captureCart()
   useCartStore.getState().addItem({ id: 'notebook', name: 'สมุด', price: 50 })
   expect(useCartStore.getState().items).toEqual([
@@ -42,6 +52,7 @@ test('adding an existing product increases its quantity without mutating previou
 })
 
 test('increasing quantity preserves the previous cart and its item objects', () => {
+  prepareQuantityCart()
   const unchanged = captureCart()
   useCartStore.getState().increaseQuantity('notebook')
   expect(useCartStore.getState().items).toEqual([
@@ -52,6 +63,7 @@ test('increasing quantity preserves the previous cart and its item objects', () 
 })
 
 test('decreasing quantity preserves the previous cart and its item objects', () => {
+  prepareQuantityCart()
   const unchanged = captureCart()
   useCartStore.getState().decreaseQuantity('notebook')
   expect(useCartStore.getState().items).toEqual([
@@ -62,13 +74,18 @@ test('decreasing quantity preserves the previous cart and its item objects', () 
 })
 
 test('decreasing quantity stops at one without removing or mutating the item', () => {
+  prepareQuantityCart()
   const unchanged = captureCart()
   useCartStore.getState().decreaseQuantity('pen')
-  expect(useCartStore.getState().items).toEqual(initialItems)
+  expect(useCartStore.getState().items).toEqual([
+    { id: 'notebook', name: 'สมุด', price: 50, quantity: 2 },
+    { id: 'pen', name: 'ปากกา', price: 20, quantity: 1 },
+  ])
   unchanged()
 })
 
 test('removing an item preserves the previous cart and its item objects', () => {
+  prepareQuantityCart()
   const unchanged = captureCart()
   useCartStore.getState().removeItem('pen')
   expect(useCartStore.getState().items).toEqual([
