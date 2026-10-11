@@ -68,3 +68,26 @@ test('cart badge counts distinct product IDs rather than total quantity', async 
   await page.getByRole('button', { name: 'ลบปากกา', exact: true }).click()
   await expect(badge).toHaveText('2 รายการ')
 })
+
+test('cart summary updates total pieces and price after cart changes', async ({ page }) => {
+  await page.goto('/')
+  for (const product of [{ id: 'notebook', name: 'สมุด', quantity: 2 }, { id: 'pen', name: 'ปากกา', quantity: 1 }]) {
+    const quantity = initialItems.find((item) => item.id === product.id)?.quantity ?? 0
+    for (let count = quantity; count < product.quantity; count += 1) {
+      await page.getByRole('button', { name: `เพิ่ม${product.name}`, exact: true }).click()
+    }
+  }
+  const quantity = page.getByRole('status', { name: 'จำนวนชิ้นรวม' })
+  const total = page.getByRole('status', { name: 'ยอดรวม', exact: true })
+  await expect(quantity).toHaveText('3 ชิ้น')
+  await expect(total).toHaveText('120 บาท')
+  await page.getByRole('button', { name: 'เพิ่มกระเป๋า', exact: true }).click()
+  await expect(quantity).toHaveText('4 ชิ้น')
+  await expect(total).toHaveText('320 บาท')
+  await page.getByRole('button', { name: 'เพิ่มจำนวนสมุด', exact: true }).click()
+  await expect(quantity).toHaveText('5 ชิ้น')
+  await expect(total).toHaveText('370 บาท')
+  await page.getByRole('button', { name: 'ลบกระเป๋า', exact: true }).click()
+  await expect(quantity).toHaveText('4 ชิ้น')
+  await expect(total).toHaveText('170 บาท')
+})

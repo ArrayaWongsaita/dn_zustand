@@ -1,10 +1,23 @@
 import { products } from './data/products.js'
 import { useCartStore } from './stores/cart-store.js'
+import { selectCartTotal, selectTotalQuantity } from './stores/cart-selectors.js'
 import './cart.css'
 
 function CartBadge() {
   const itemCount = useCartStore((state) => state.items.length)
   return <p role="status" aria-label="จำนวนรายการ">{itemCount} รายการ</p>
+}
+
+function CartSummary() {
+  const totalQuantity = useCartStore(selectTotalQuantity)
+  const cartTotal = useCartStore(selectCartTotal)
+  return (
+    <section aria-label="สรุปตะกร้า">
+      <h2>สรุปตะกร้า</h2>
+      <p role="status" aria-label="จำนวนชิ้นรวม">{totalQuantity} ชิ้น</p>
+      <p role="status" aria-label="ยอดรวม">{cartTotal} บาท</p>
+    </section>
+  )
 }
 
 function AddProductButton({ product }) {
@@ -49,7 +62,7 @@ function CartItems() {
 function App() {
   return (
     <main className="shop">
-      <header><p className="eyebrow">ZUSTAND / เรียนผ่านการลงมือทำ</p><h1>ร้านเครื่องเขียน</h1><p>เลือกอ่านเฉพาะสิ่งที่ใช้ด้วย selectors ในบทที่ 4</p></header>
+      <header><p className="eyebrow">ZUSTAND / เรียนผ่านการลงมือทำ</p><h1>ร้านเครื่องเขียน</h1><p>คำนวณจำนวนชิ้นรวมและยอดรวมจาก items ในบทที่ 5</p></header>
       <div className="shop-grid">
         <section aria-labelledby="products-heading" className="products-panel">
           <h2 id="products-heading">สินค้า</h2>
@@ -63,7 +76,7 @@ function App() {
           </ul>
           <p className="note">เพิ่มซ้ำเพื่อเพิ่มจำนวน ลดได้ต่ำสุด 1 ชิ้น ใช้ปุ่มลบเมื่อต้องการนำออก</p>
         </section>
-        <div><CartBadge /><CartItems /></div>
+        <div><CartBadge /><CartItems /><CartSummary /></div>
       </div>
     </main>
   )

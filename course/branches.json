@@ -85,5 +85,28 @@
       "unit": [],
       "e2e": []
     }
+  },
+  {
+    "branch": "05-derived-state-lab",
+    "lesson": 5,
+    "type": "lab",
+    "expectedFailures": {
+      "unit": [
+        "total quantity sums pieces and updates after adding another product",
+        "cart total sums price times quantity and updates after adding another product"
+      ],
+      "e2e": [
+        "cart summary updates total pieces and price after cart changes"
+      ]
+    }
+  },
+  {
+    "branch": "05-derived-state-solution",
+    "lesson": 5,
+    "type": "solution",
+    "expectedFailures": {
+      "unit": [],
+      "e2e": []
+    }
   }
 ]
