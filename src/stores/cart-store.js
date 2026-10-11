@@ -1,7 +1,7 @@
 import { create } from 'zustand'
+import { createJSONStorage, persist } from 'zustand/middleware'
 
-// TODO: ครอบ state creator ด้วย persist และกำหนด storage/options เฉพาะ items
-export const useCartStore = create((set) => ({
+export const useCartStore = create(persist((set) => ({
   items: [],
   addItem: (product) => set((state) => {
     if (state.items.some((item) => item.id === product.id)) {
@@ -25,4 +25,8 @@ export const useCartStore = create((set) => ({
   removeItem: (id) => set((state) => ({
     items: state.items.filter((item) => item.id !== id),
   })),
+ }), {
+  name: 'zustand-course-cart',
+  storage: createJSONStorage(() => localStorage),
+  partialize: (state) => ({ items: state.items }),
 }))
