@@ -1,6 +1,6 @@
 # ส่งต่อให้ผู้สอนก่อนประกาศรุ่น
 
-สถานะ: มีหลักฐานตรวจอัตโนมัติใน [รายงานล่าสุด](readiness/latest.md) และ [JSON ตาม commit](readiness/latest.json) การทบทวนเนื้อหาโดยผู้สอนยังไม่ดำเนินการในงานอัตโนมัตินี้ ยังไม่ประกาศว่าพร้อมสอนหรือได้รับการอนุมัติ เผยแพร่ครบ 18 branches แล้ว และยืนยัน commit/เอกสารผ่าน GitHub API ตาม [หลักฐาน remote](readiness/remote.json) CI จริงจะบันทึก URL และ commit หลังตรวจบน GitHub Actions โดยผู้ดูแล
+สถานะ: มีหลักฐานตรวจอัตโนมัติใน [รายงานล่าสุด](readiness/latest.md) และ [JSON ตาม commit](readiness/latest.json) การทบทวนเนื้อหาโดยผู้สอนยังไม่ดำเนินการในงานอัตโนมัตินี้ ยังไม่ประกาศว่าพร้อมสอนหรือได้รับการอนุมัติ เผยแพร่ครบ 18 branches แล้ว และยืนยัน commit/เอกสารผ่าน GitHub API ตาม [หลักฐาน remote](readiness/remote.json) CI จริงยังไม่เริ่ม: push และ draft PR ยังไม่สร้าง run และ manual dispatch ได้ HTTP 404 ตาม [สถานะ CI](readiness/ci.json) เตรียม workflow ชั่วคราวแล้ว แต่ยังรออนุญาตก่อนเพิ่มไฟล์ใน main ไม่อ้างว่า CI ผ่าน
 
 ## รายการที่ผู้สอนต้องทบทวน
 

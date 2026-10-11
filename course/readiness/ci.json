@@ -1,0 +1,21 @@
+{
+  "status": "not_run",
+  "checkedAt": "2026-10-11T07:20:22.452335+00:00",
+  "integrationCommit": "4b1a7666ee01dcdcfcc37ba9b9ec7892da13b618",
+  "pullRequest": "https://github.com/ArrayaWongsaita/dn_zustand/pull/21",
+  "attempts": [
+    "Published integration and18 course branches",
+    "Pushed integration separately",
+    "Opened draft PR21",
+    "Manual workflow dispatch returned HTTP404"
+  ],
+  "observed": "GitHub Actions enabled, but workflows/runs/check-runs API lists are empty. Push/PR failure to register remains unexplained; no successful CI claimed.",
+  "nextStep": "Approval pending for adding one temporary workflow to main to enable documented manual dispatch against integration branch.",
+  "bootstrapProposal": {
+    "localBranch": "ci/spec-9-bootstrap",
+    "commit": "d0ddf6c",
+    "file": ".github/workflows/course-bootstrap.yml",
+    "remoteMainChanged": false
+  },
+  "manualDispatchDocumentation": "https://docs.github.com/en/actions/how-tos/manage-workflow-runs/manually-run-a-workflow"
+}
