@@ -1,6 +1,6 @@
 # เฉลยบทที่ 8 — เก็บเฉพาะข้อมูลที่ต้องอยู่ข้ามรีโหลด
 
-ลอง [โจทย์และ checklist](../lessons/08-persist.md) ก่อนอ่านคำตอบ
+ลอง [โจทย์และ checklist](https://github.com/ArrayaWongsaita/dn_zustand/blob/08-persist-lab/course/lessons/08-persist.md) ก่อนอ่านคำตอบ
 
 ```js
 import { createJSONStorage, persist } from 'zustand/middleware'
