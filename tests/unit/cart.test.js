@@ -93,3 +93,15 @@ test('removing an item preserves the previous cart and its item objects', () => 
   ])
   unchanged()
 })
+
+test('clearing the cart empties items and keeps actions usable for adding again', () => {
+  prepareQuantityCart()
+  const unchanged = captureCart()
+  useCartStore.getState().clearCart()
+  expect(useCartStore.getState().items).toEqual([])
+  unchanged()
+  useCartStore.getState().addItem({ id: 'bag', name: 'กระเป๋า', price: 200 })
+  expect(useCartStore.getState().items).toEqual([
+    { id: 'bag', name: 'กระเป๋า', price: 200, quantity: 1 },
+  ])
+})
