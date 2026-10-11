@@ -50,3 +50,21 @@ test('quantity controls stop at one and the remove button removes the item', asy
   await expect(cart.getByRole('listitem')).toHaveCount(1)
   await expect(cart.getByText('ปากกา', { exact: true })).toHaveCount(0)
 })
+
+test('cart badge counts distinct product IDs rather than total quantity', async ({ page }) => {
+  await page.goto('/')
+  for (const product of [{ id: 'notebook', name: 'สมุด', quantity: 2 }, { id: 'pen', name: 'ปากกา', quantity: 1 }]) {
+    const quantity = initialItems.find((item) => item.id === product.id)?.quantity ?? 0
+    for (let count = quantity; count < product.quantity; count += 1) {
+      await page.getByRole('button', { name: `เพิ่ม${product.name}`, exact: true }).click()
+    }
+  }
+  const badge = page.getByRole('status', { name: 'จำนวนรายการ' })
+  await expect(badge).toHaveText('2 รายการ')
+  await page.getByRole('button', { name: 'เพิ่มสมุด', exact: true }).click()
+  await expect(badge).toHaveText('2 รายการ')
+  await page.getByRole('button', { name: 'เพิ่มกระเป๋า', exact: true }).click()
+  await expect(badge).toHaveText('3 รายการ')
+  await page.getByRole('button', { name: 'ลบปากกา', exact: true }).click()
+  await expect(badge).toHaveText('2 รายการ')
+})
