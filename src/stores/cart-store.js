@@ -1,10 +1,8 @@
 import { create } from 'zustand'
 
+// TODO: ครอบ state creator ด้วย persist และกำหนด storage/options เฉพาะ items
 export const useCartStore = create((set) => ({
-  items: [
-    { id: 'notebook', name: 'สมุด', price: 50, quantity: 2 },
-    { id: 'pen', name: 'ปากกา', price: 20, quantity: 1 },
-  ],
+  items: [],
   addItem: (product) => set((state) => {
     if (state.items.some((item) => item.id === product.id)) {
       return { items: state.items.map((item) => item.id === product.id

@@ -91,7 +91,7 @@ function ProductCatalog() {
 function App() {
   return (
     <main className="shop">
-      <header><p className="eyebrow">ZUSTAND / เรียนผ่านการลงมือทำ</p><h1>ร้านเครื่องเขียน</h1><p>ล้างเฉพาะตะกร้าและใช้ actions ต่อในบทที่ 7</p></header>
+      <header><p className="eyebrow">ZUSTAND / เรียนผ่านการลงมือทำ</p><h1>ร้านเครื่องเขียน</h1><p>เก็บตะกร้าข้ามการรีโหลดด้วย persist ในบทที่ 8</p></header>
       <div className="shop-grid">
         <ProductCatalog />
         <div><CartBadge /><CartItems /><CartSummary /><ClearCartButton /></div>
