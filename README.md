@@ -16,7 +16,7 @@
 node --version
 npm --version
 git --version
-git clone https://github.com/ArrayaWongsaita/dn_zustand.git
+git clone --branch 01-basic-store-lab https://github.com/ArrayaWongsaita/dn_zustand.git
 cd dn_zustand
 npm ci
 npx playwright install chromium
