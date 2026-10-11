@@ -3,20 +3,19 @@ import { useCartStore } from './stores/cart-store.js'
 import './cart.css'
 
 function CartBadge() {
-  // TODO 1: เลือกอ่านเฉพาะจำนวนรายการ โดยไม่เก็บค่าซ้ำใน store
-  const { items } = useCartStore()
-  return <p role="status" aria-label="จำนวนรายการ">{items.length} รายการ</p>
+  const itemCount = useCartStore((state) => state.items.length)
+  return <p role="status" aria-label="จำนวนรายการ">{itemCount} รายการ</p>
 }
 
 function AddProductButton({ product }) {
-  // TODO 2: เลือกอ่านเฉพาะ action ที่ปุ่มใช้
-  const { addItem } = useCartStore()
+  const addItem = useCartStore((state) => state.addItem)
   return <button type="button" onClick={() => addItem(product)} aria-label={`เพิ่ม${product.name}`}>เพิ่มสินค้า</button>
 }
 
 function CartItemActions({ item }) {
-  // TODO 3: เลือกอ่านเฉพาะ actions ทีละตัว
-  const { increaseQuantity, decreaseQuantity, removeItem } = useCartStore()
+  const increaseQuantity = useCartStore((state) => state.increaseQuantity)
+  const decreaseQuantity = useCartStore((state) => state.decreaseQuantity)
+  const removeItem = useCartStore((state) => state.removeItem)
   return (
     <div>
       <button type="button" aria-label={`ลดจำนวน${item.name}`} onClick={() => decreaseQuantity(item.id)}>−</button>
@@ -27,8 +26,7 @@ function CartItemActions({ item }) {
 }
 
 function CartItems() {
-  // TODO 4: เลือกอ่านเฉพาะ items
-  const { items } = useCartStore()
+  const items = useCartStore((state) => state.items)
 
   return (
     <section aria-labelledby="cart-heading" className="cart-panel">
