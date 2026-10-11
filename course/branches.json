@@ -129,5 +129,27 @@
       "unit": [],
       "e2e": []
     }
+  },
+  {
+    "branch": "07-reset-lab",
+    "lesson": 7,
+    "type": "lab",
+    "expectedFailures": {
+      "unit": [
+        "clearing the cart empties items and keeps actions usable for adding again"
+      ],
+      "e2e": [
+        "clearing the cart preserves the product filter and allows adding again"
+      ]
+    }
+  },
+  {
+    "branch": "07-reset-solution",
+    "lesson": 7,
+    "type": "solution",
+    "expectedFailures": {
+      "unit": [],
+      "e2e": []
+    }
   }
 ]

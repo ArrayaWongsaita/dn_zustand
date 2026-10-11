@@ -26,6 +26,11 @@ function AddProductButton({ product }) {
   return <button type="button" onClick={() => addItem(product)} aria-label={`เพิ่ม${product.name}`}>เพิ่มสินค้า</button>
 }
 
+function ClearCartButton() {
+  const clearCart = useCartStore((state) => state.clearCart)
+  return <button type="button" onClick={clearCart}>ล้างตะกร้า</button>
+}
+
 function CartItemActions({ item }) {
   const increaseQuantity = useCartStore((state) => state.increaseQuantity)
   const decreaseQuantity = useCartStore((state) => state.decreaseQuantity)
@@ -86,10 +91,10 @@ function ProductCatalog() {
 function App() {
   return (
     <main className="shop">
-      <header><p className="eyebrow">ZUSTAND / เรียนผ่านการลงมือทำ</p><h1>ร้านเครื่องเขียน</h1><p>กรองเฉพาะสินค้าให้เลือกซื้อด้วย local state ในบทที่ 6</p></header>
+      <header><p className="eyebrow">ZUSTAND / เรียนผ่านการลงมือทำ</p><h1>ร้านเครื่องเขียน</h1><p>ล้างเฉพาะตะกร้าและใช้ actions ต่อในบทที่ 7</p></header>
       <div className="shop-grid">
         <ProductCatalog />
-        <div><CartBadge /><CartItems /><CartSummary /></div>
+        <div><CartBadge /><CartItems /><CartSummary /><ClearCartButton /></div>
       </div>
     </main>
   )
