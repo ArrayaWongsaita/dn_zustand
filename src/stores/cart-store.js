@@ -14,10 +14,9 @@ export const useCartStore = create((set) => ({
     return { items: [...state.items, { ...product, quantity: 1 }] }
   }),
   increaseQuantity: (id) => set((state) => ({
-    items: state.items.map((item) => {
-      if (item.id === id) item.quantity += 1
-      return item
-    }),
+    items: state.items.map((item) => item.id === id
+      ? { ...item, quantity: item.quantity + 1 }
+      : item),
   })),
   decreaseQuantity: (id) => set((state) => ({
     items: state.items.map((item) => item.id === id
