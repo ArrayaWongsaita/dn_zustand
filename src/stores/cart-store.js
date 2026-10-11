@@ -23,8 +23,7 @@ export const useCartStore = create((set) => ({
       ? { ...item, quantity: Math.max(1, item.quantity - 1) }
       : item),
   })),
-  // TODO: ล้างเฉพาะ items โดยรักษา actions และไม่คืนข้อมูลฝึก
-  clearCart: () => {},
+  clearCart: () => set({ items: [] }),
   removeItem: (id) => set((state) => ({
     items: state.items.filter((item) => item.id !== id),
   })),
