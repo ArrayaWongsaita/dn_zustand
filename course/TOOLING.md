@@ -1,6 +1,6 @@
 # เครื่องมือร่วม
 
-ใช้ Node.js 22.12 ขึ้นไป (แนะนำ Node.js 22 LTS) และ npm 10 ขึ้นไป ตรวจด้วย `node --version` และ `npm --version`
+ใช้ Node.js 22 LTS ตั้งแต่ 22.12 หรือ 24 LTS (ดู engines ใน package.json) และ npm 10 ขึ้นไป ตรวจด้วย `node --version` และ `npm --version`
 
 ก่อนวันเรียน: `npm ci` แล้ว `npx playwright install chromium` (Linux ใช้ `npx playwright install --with-deps chromium`)
 ใช้ npm และ package-lock.json เป็นหลัก; เก็บ pnpm-lock.yaml ของ starter ไว้เป็นประวัติ ไม่ใช้ติดตั้งคอร์ส
