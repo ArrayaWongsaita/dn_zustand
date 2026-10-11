@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { products } from './data/products.js'
 import { useCartStore } from './stores/cart-store.js'
 import { selectCartTotal, selectTotalQuantity } from './stores/cart-selectors.js'
@@ -60,11 +61,8 @@ function CartItems() {
 }
 
 function ProductCatalog() {
-  // TODO 1: เก็บคำค้นใน local state และเปลี่ยนค่าจาก input
-  const query = ''
-  const changeQuery = (_value) => {}
-  // TODO 2: เลือกสินค้าที่มีคำค้นอยู่ในชื่อ โดยไม่เปลี่ยน products หรือ items
-  const visibleProducts = products
+  const [query, changeQuery] = useState('')
+  const visibleProducts = products.filter((product) => product.name.includes(query))
   return (
         <section aria-labelledby="products-heading" className="products-panel">
           <h2 id="products-heading">สินค้า</h2>
