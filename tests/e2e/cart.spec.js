@@ -19,9 +19,34 @@ test('screen displays the lesson cart items and quantities', async ({ page }) =>
 
 test('adding a product from the catalog displays it in the cart', async ({ page }) => {
   await page.goto('/')
-  await page.getByRole('button', { name: 'เพิ่มสมุด', exact: true }).click()
+  await page.getByRole('button', { name: 'เพิ่มกระเป๋า', exact: true }).click()
+  const cart = page.getByRole('region', { name: 'ตะกร้าสินค้า' })
+  await expect(cart.getByRole('listitem')).toHaveCount(initialItems.length + 1)
+  const added = cart.getByRole('listitem').filter({ has: page.getByText('กระเป๋า', { exact: true }) })
+  await expect(added).toContainText('จำนวน 1 ชิ้น')
+})
+
+
+test('quantity controls stop at one and the remove button removes the item', async ({ page }) => {
+  await page.goto('/')
+  // Arrange through user controls, including later lessons that start empty.
+  const notebookQuantity = initialItems.find((item) => item.id === 'notebook')?.quantity ?? 0
+  for (let quantity = notebookQuantity; quantity < 2; quantity += 1) {
+    await page.getByRole('button', { name: 'เพิ่มสมุด', exact: true }).click()
+  }
+  if (!initialItems.some((item) => item.id === 'pen')) {
+    await page.getByRole('button', { name: 'เพิ่มปากกา', exact: true }).click()
+  }
+  const notebook = page.getByRole('region', { name: 'ตะกร้าสินค้า' }).getByRole('listitem').filter({ has: page.getByText('สมุด', { exact: true }) })
+  await page.getByRole('button', { name: 'เพิ่มจำนวนสมุด', exact: true }).click()
+  await expect(notebook).toContainText('จำนวน 3 ชิ้น')
+  await page.getByRole('button', { name: 'ลดจำนวนสมุด', exact: true }).click()
+  await page.getByRole('button', { name: 'ลดจำนวนสมุด', exact: true }).click()
+  await expect(notebook).toContainText('จำนวน 1 ชิ้น')
+  await page.getByRole('button', { name: 'ลดจำนวนสมุด', exact: true }).click()
+  await expect(notebook).toContainText('จำนวน 1 ชิ้น')
+  await page.getByRole('button', { name: 'ลบปากกา', exact: true }).click()
   const cart = page.getByRole('region', { name: 'ตะกร้าสินค้า' })
   await expect(cart.getByRole('listitem')).toHaveCount(1)
-  await expect(cart.getByRole('listitem')).toContainText('สมุด')
-  await expect(cart.getByRole('listitem')).toContainText('จำนวน 1 ชิ้น')
+  await expect(cart.getByText('ปากกา', { exact: true })).toHaveCount(0)
 })

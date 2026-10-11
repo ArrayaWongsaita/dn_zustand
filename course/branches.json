@@ -42,5 +42,30 @@
       "unit": [],
       "e2e": []
     }
+  },
+  {
+    "branch": "03-immutable-updates-lab",
+    "lesson": 3,
+    "type": "lab",
+    "expectedFailures": {
+      "unit": [
+        "adding an existing product increases its quantity without mutating previous items",
+        "increasing quantity preserves the previous cart and its item objects",
+        "decreasing quantity preserves the previous cart and its item objects",
+        "removing an item preserves the previous cart and its item objects"
+      ],
+      "e2e": [
+        "quantity controls stop at one and the remove button removes the item"
+      ]
+    }
+  },
+  {
+    "branch": "03-immutable-updates-solution",
+    "lesson": 3,
+    "type": "solution",
+    "expectedFailures": {
+      "unit": [],
+      "e2e": []
+    }
   }
 ]
