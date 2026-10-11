@@ -1,6 +1,6 @@
 # เฉลยบทที่ 4 — ขอบเขต subscription
 
-อ่าน [โจทย์และ checklist](../lessons/04-selectors.md) และปรับโค้ดด้วยตัวเองก่อน
+อ่าน [โจทย์และ checklist](https://github.com/ArrayaWongsaita/dn_zustand/blob/04-selectors-lab/course/lessons/04-selectors.md) และปรับโค้ดด้วยตัวเองก่อน
 
 CartItems เลือก items: `useCartStore((state) => state.items)` เพราะต้องใช้รายการเพื่อแสดงชื่อ ราคา จำนวน
 CartBadge เลือกตัวเลข: `useCartStore((state) => state.items.length)` แล้วแสดงจำนวนรายการ
