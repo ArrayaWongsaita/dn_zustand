@@ -16,3 +16,12 @@ test('screen displays the lesson cart items and quantities', async ({ page }) =>
     }
   }
 })
+
+test('adding a product from the catalog displays it in the cart', async ({ page }) => {
+  await page.goto('/')
+  await page.getByRole('button', { name: 'เพิ่มสมุด', exact: true }).click()
+  const cart = page.getByRole('region', { name: 'ตะกร้าสินค้า' })
+  await expect(cart.getByRole('listitem')).toHaveCount(1)
+  await expect(cart.getByRole('listitem')).toContainText('สมุด')
+  await expect(cart.getByRole('listitem')).toContainText('จำนวน 1 ชิ้น')
+})

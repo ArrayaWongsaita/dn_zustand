@@ -8,3 +8,10 @@ beforeEach(() => resetStore(useCartStore))
 test('store exposes the lesson initial cart items', () => {
   expect(useCartStore.getState().items).toEqual(initialItems)
 })
+
+test('adding a new product creates a cart item with quantity one', () => {
+  useCartStore.getState().addItem({ id: 'notebook', name: 'สมุด', price: 50 })
+  expect(useCartStore.getState().items).toEqual([
+    { id: 'notebook', name: 'สมุด', price: 50, quantity: 1 },
+  ])
+})
