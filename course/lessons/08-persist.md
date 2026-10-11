@@ -130,3 +130,16 @@ npm run dev
 ```
 
 ครั้งถัดไปใช้ `git switch try/08-persist-solution` กลับงานตัวเองใช้ `git switch my/08-persist` และติดตั้งใหม่
+
+
+## ไปกิจกรรมทบทวน
+
+Commit งานเดิมพร้อมจุดที่ติดและหยุด dev server ด้วย Ctrl+C แล้วแยก branch สำหรับ [กิจกรรมทบทวน 30 นาที](https://github.com/ArrayaWongsaita/dn_zustand/blob/09-review-bug/course/lessons/09-review.md):
+
+```sh
+git switch -c my/09-review origin/09-review-bug
+npm ci
+npm run dev
+```
+
+กิจกรรมเริ่มจากบท 6 จึงไม่มี persist/clearCart เพื่อให้โฟกัสบั๊กข้อมูลเดิม ถ้ามี branch ส่วนตัวแล้วใช้ `git switch my/09-review` ไม่สร้างซ้ำ ใช้ local course branch ให้ตัด `origin/` ออก งานบท 8 ยังอยู่บน branch ส่วนตัวเดิม
