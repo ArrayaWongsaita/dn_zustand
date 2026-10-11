@@ -1,6 +1,6 @@
 # ผลตรวจอัตโนมัติของคอร์ส
 
-ตรวจเมื่อ 2026-10-11T07:00:17.628Z จาก commit `ee5f914a2e18a95632e1811c9535274970772708`
+ตรวจเมื่อ 2026-10-11T07:07:23.376Z จาก commit `f64e358e3ce78f8a147667f2ab542d401f1221f1`
 
 ผลรวม: **ผ่าน**
 
@@ -12,18 +12,18 @@
 | 02-actions-solution | 75b15c02fff9d4b466e759762ba1b3a15c188960 | ผ่าน | {"unit":[],"e2e":[]} |
 | 03-immutable-updates-lab | a84ba35921cdf1753cf9c3c8a496bee06932fe33 | ผ่าน | {"unit":["adding an existing product increases its quantity without mutating previous items","increasing quantity preserves the previous cart and its item objects","decreasing quantity preserves the previous cart and its item objects","removing an item preserves the previous cart and its item objects"],"e2e":["quantity controls stop at one and the remove button removes the item"]} |
 | 03-immutable-updates-solution | f56d103a753c30daa3ec26bc9d9180f106bcc248 | ผ่าน | {"unit":[],"e2e":[]} |
-| 04-selectors-lab | 6fc89245b411b55b637a8a1cf5e3be9c3131e933 | ผ่าน | {"unit":[],"e2e":[]} |
-| 04-selectors-solution | f7ca4c014c3fc337da3c70220c2d1089dea7bcef | ผ่าน | {"unit":[],"e2e":[]} |
-| 05-derived-state-lab | 17091e1659a7d3840797d3da00c46b106fa5b3d7 | ผ่าน | {"unit":["total quantity sums pieces and updates after adding another product","cart total sums price times quantity and updates after adding another product"],"e2e":["cart summary updates total pieces and price after cart changes"]} |
-| 05-derived-state-solution | 14d63d0482a3ae372ca291262b3a88e39468e6d9 | ผ่าน | {"unit":[],"e2e":[]} |
-| 06-local-state-lab | 9d720925d0e8e5fa1f16382886457986f2b236f0 | ผ่าน | {"unit":[],"e2e":["searching a Thai substring filters products without changing the cart or totals","an unmatched search shows a message and clearing it restores all products"]} |
-| 06-local-state-solution | e285822cfa19c1860415e82161f6d38ad22796bf | ผ่าน | {"unit":[],"e2e":[]} |
-| 07-reset-lab | e7cd6f3949f82749265e587b69affc940ab42fa8 | ผ่าน | {"unit":["clearing the cart empties items and keeps actions usable for adding again"],"e2e":["clearing the cart preserves the product filter and allows adding again"]} |
-| 07-reset-solution | 5ee5c9db6629786c19a1647393a3d8ee74588851 | ผ่าน | {"unit":[],"e2e":[]} |
-| 08-persist-lab | 88cb6db69f8b409a19d5ead72c4abe57bbf30a9d | ผ่าน | {"unit":[],"e2e":["adding a product survives reload while the local filter resets","adjusted quantities survive reload and quantity actions remain usable","clearing a saved cart remains empty after reload and actions still work","persist saves only cart items under the course storage key"]} |
-| 08-persist-solution | 37db13ed3631f4a6a0e5741c804b58bff8d11f8b | ผ่าน | {"unit":[],"e2e":[]} |
-| 09-review-bug | 275308bb637227bdc9f253f258aa80c8ff41afef | ผ่าน | {"unit":["increasing quantity preserves the previous cart and its item objects"],"e2e":[]} |
-| 09-review-solution | fc38ad32a9aa5831a51852d2ea2c2f7f5eca6018 | ผ่าน | {"unit":[],"e2e":[]} |
+| 04-selectors-lab | ecb1341f74973415b4bb626c04f18968f9d96262 | ผ่าน | {"unit":[],"e2e":[]} |
+| 04-selectors-solution | a1f4959f37b4935107674ccdb650dc8d1fc756df | ผ่าน | {"unit":[],"e2e":[]} |
+| 05-derived-state-lab | 637314d82b34b9bba48d31a4072e25e0cccfb9c6 | ผ่าน | {"unit":["total quantity sums pieces and updates after adding another product","cart total sums price times quantity and updates after adding another product"],"e2e":["cart summary updates total pieces and price after cart changes"]} |
+| 05-derived-state-solution | e2638b4946e8a8574268ed8f2b555a213e04d05b | ผ่าน | {"unit":[],"e2e":[]} |
+| 06-local-state-lab | 9294da35c659527e73a805903ee62097c1e3bd84 | ผ่าน | {"unit":[],"e2e":["searching a Thai substring filters products without changing the cart or totals","an unmatched search shows a message and clearing it restores all products"]} |
+| 06-local-state-solution | 49e4821d029985f1a7682307ace3de6ee00809ea | ผ่าน | {"unit":[],"e2e":[]} |
+| 07-reset-lab | 6a52bc76c5f291c243b15577dc536a50914a1597 | ผ่าน | {"unit":["clearing the cart empties items and keeps actions usable for adding again"],"e2e":["clearing the cart preserves the product filter and allows adding again"]} |
+| 07-reset-solution | 89067d120a4235a8ee04420c5fb817b199c59c58 | ผ่าน | {"unit":[],"e2e":[]} |
+| 08-persist-lab | 173d5def88c57bf3a9d45ca1124785e7e10869c4 | ผ่าน | {"unit":[],"e2e":["adding a product survives reload while the local filter resets","adjusted quantities survive reload and quantity actions remain usable","clearing a saved cart remains empty after reload and actions still work","persist saves only cart items under the course storage key"]} |
+| 08-persist-solution | 23276669377ac7e29ab5e97874b379938056b03e | ผ่าน | {"unit":[],"e2e":[]} |
+| 09-review-bug | ad47e384016dcf47535448180d8b8b96411441b4 | ผ่าน | {"unit":["increasing quantity preserves the previous cart and its item objects"],"e2e":[]} |
+| 09-review-solution | b2d12486b9c5469615603713560cda88a56974d0 | ผ่าน | {"unit":[],"e2e":[]} |
 
 ลิงก์ตรวจแล้ว 24; รอตรวจในชุดอื่น 0
 
