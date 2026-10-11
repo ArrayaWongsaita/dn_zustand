@@ -4,14 +4,43 @@
     "lesson": 1,
     "type": "lab",
     "expectedFailures": {
-      "unit": ["store exposes the lesson initial cart items"],
-      "e2e": ["screen displays the lesson cart items and quantities"]
+      "unit": [
+        "store exposes the lesson initial cart items"
+      ],
+      "e2e": [
+        "screen displays the lesson cart items and quantities"
+      ]
     }
   },
   {
     "branch": "01-basic-store-solution",
     "lesson": 1,
     "type": "solution",
-    "expectedFailures": { "unit": [], "e2e": [] }
+    "expectedFailures": {
+      "unit": [],
+      "e2e": []
+    }
+  },
+  {
+    "branch": "02-actions-lab",
+    "lesson": 2,
+    "type": "lab",
+    "expectedFailures": {
+      "unit": [
+        "adding a new product creates a cart item with quantity one"
+      ],
+      "e2e": [
+        "adding a product from the catalog displays it in the cart"
+      ]
+    }
+  },
+  {
+    "branch": "02-actions-solution",
+    "lesson": 2,
+    "type": "solution",
+    "expectedFailures": {
+      "unit": [],
+      "e2e": []
+    }
   }
 ]
