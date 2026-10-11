@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { products } from './data/products.js'
 import { useCartStore } from './stores/cart-store.js'
 import { selectCartTotal, selectTotalQuantity } from './stores/cart-selectors.js'
@@ -59,23 +60,35 @@ function CartItems() {
   )
 }
 
-function App() {
+function ProductCatalog() {
+  const [query, changeQuery] = useState('')
+  const visibleProducts = products.filter((product) => product.name.includes(query))
   return (
-    <main className="shop">
-      <header><p className="eyebrow">ZUSTAND / เรียนผ่านการลงมือทำ</p><h1>ร้านเครื่องเขียน</h1><p>คำนวณจำนวนชิ้นรวมและยอดรวมจาก items ในบทที่ 5</p></header>
-      <div className="shop-grid">
         <section aria-labelledby="products-heading" className="products-panel">
           <h2 id="products-heading">สินค้า</h2>
+          <label htmlFor="product-filter">ค้นหาสินค้า</label>
+          <input id="product-filter" type="search" value={query} onChange={(event) => changeQuery(event.target.value)} placeholder="ค้นชื่อสินค้า" />
+          {visibleProducts.length === 0 ? <p role="status">ไม่พบสินค้า</p> : (
           <ul aria-label="สินค้า">
-            {products.map((product) => (
+            {visibleProducts.map((product) => (
               <li key={product.id}>
                 <div><strong>{product.name}</strong><p>{product.price} บาท</p></div>
                 <AddProductButton product={product} />
               </li>
             ))}
           </ul>
+          )}
           <p className="note">เพิ่มซ้ำเพื่อเพิ่มจำนวน ลดได้ต่ำสุด 1 ชิ้น ใช้ปุ่มลบเมื่อต้องการนำออก</p>
         </section>
+  )
+}
+
+function App() {
+  return (
+    <main className="shop">
+      <header><p className="eyebrow">ZUSTAND / เรียนผ่านการลงมือทำ</p><h1>ร้านเครื่องเขียน</h1><p>กรองเฉพาะสินค้าให้เลือกซื้อด้วย local state ในบทที่ 6</p></header>
+      <div className="shop-grid">
+        <ProductCatalog />
         <div><CartBadge /><CartItems /><CartSummary /></div>
       </div>
     </main>

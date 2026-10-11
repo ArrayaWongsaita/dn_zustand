@@ -108,5 +108,26 @@
       "unit": [],
       "e2e": []
     }
+  },
+  {
+    "branch": "06-local-state-lab",
+    "lesson": 6,
+    "type": "lab",
+    "expectedFailures": {
+      "unit": [],
+      "e2e": [
+        "searching a Thai substring filters products without changing the cart or totals",
+        "an unmatched search shows a message and clearing it restores all products"
+      ]
+    }
+  },
+  {
+    "branch": "06-local-state-solution",
+    "lesson": 6,
+    "type": "solution",
+    "expectedFailures": {
+      "unit": [],
+      "e2e": []
+    }
   }
 ]
