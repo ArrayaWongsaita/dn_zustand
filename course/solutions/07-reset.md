@@ -1,6 +1,6 @@
 # เฉลยบทที่ 7 — reset ตามขอบเขต
 
-ลอง [โจทย์และ checklist](../lessons/07-reset.md) ก่อนอ่านคำตอบ
+ลอง [โจทย์และ checklist](https://github.com/ArrayaWongsaita/dn_zustand/blob/07-reset-lab/course/lessons/07-reset.md) ก่อนอ่านคำตอบ
 
 ```js
 clearCart: () => set({ items: [] }),
