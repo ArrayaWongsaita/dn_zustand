@@ -23,9 +23,11 @@ function CartItems() {
 }
 
 function App() {
+  const { addItem } = useCartStore()
+
   return (
     <main className="shop">
-      <header><p className="eyebrow">ZUSTAND / เรียนผ่านการลงมือทำ</p><h1>ร้านเครื่องเขียน</h1><p>อ่านข้อมูลร่วมกันจาก store ในบทที่ 1</p></header>
+      <header><p className="eyebrow">ZUSTAND / เรียนผ่านการลงมือทำ</p><h1>ร้านเครื่องเขียน</h1><p>เพิ่มสินค้าใหม่ผ่าน action ในบทที่ 2</p></header>
       <div className="shop-grid">
         <section aria-labelledby="products-heading" className="products-panel">
           <h2 id="products-heading">สินค้า</h2>
@@ -33,11 +35,11 @@ function App() {
             {products.map((product) => (
               <li key={product.id}>
                 <div><strong>{product.name}</strong><p>{product.price} บาท</p></div>
-                <button type="button" disabled aria-label={`เพิ่ม${product.name}`}>เพิ่มสินค้า</button>
+                <button type="button" onClick={() => addItem(product)} aria-label={`เพิ่ม${product.name}`}>เพิ่มสินค้า</button>
               </li>
             ))}
           </ul>
-          <p className="note">ปุ่มเพิ่มสินค้าจะเริ่มใช้งานในบทถัดไป</p>
+          <p className="note">บทนี้ฝึกเพิ่มสินค้าที่ยังไม่มีในตะกร้า</p>
         </section>
         <CartItems />
       </div>
