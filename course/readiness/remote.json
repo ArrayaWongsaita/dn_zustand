@@ -1,0 +1,115 @@
+{
+  "checkedAt": "2026-10-11T07:12:47.977392+00:00",
+  "integrationCommit": "311a8339807d4768a8137cd45808a60bd4e34cab",
+  "branches": [
+    {
+      "branch": "01-basic-store-lab",
+      "commit": "58d8ccd0289a42ccaeba77bae8b00d1d9d0bb7de",
+      "document": "course/lessons/01-basic-store.md",
+      "remote": "verified"
+    },
+    {
+      "branch": "01-basic-store-solution",
+      "commit": "7ea1f8e4cec4da1878d180f4d035199da7362f91",
+      "document": "course/solutions/01-basic-store.md",
+      "remote": "verified"
+    },
+    {
+      "branch": "02-actions-lab",
+      "commit": "ddef2da148e8d4fa9e13114a9f230866ab6ef92d",
+      "document": "course/lessons/02-actions.md",
+      "remote": "verified"
+    },
+    {
+      "branch": "02-actions-solution",
+      "commit": "75b15c02fff9d4b466e759762ba1b3a15c188960",
+      "document": "course/solutions/02-actions.md",
+      "remote": "verified"
+    },
+    {
+      "branch": "03-immutable-updates-lab",
+      "commit": "a84ba35921cdf1753cf9c3c8a496bee06932fe33",
+      "document": "course/lessons/03-immutable-updates.md",
+      "remote": "verified"
+    },
+    {
+      "branch": "03-immutable-updates-solution",
+      "commit": "f56d103a753c30daa3ec26bc9d9180f106bcc248",
+      "document": "course/solutions/03-immutable-updates.md",
+      "remote": "verified"
+    },
+    {
+      "branch": "04-selectors-lab",
+      "commit": "ecb1341f74973415b4bb626c04f18968f9d96262",
+      "document": "course/lessons/04-selectors.md",
+      "remote": "verified"
+    },
+    {
+      "branch": "04-selectors-solution",
+      "commit": "a1f4959f37b4935107674ccdb650dc8d1fc756df",
+      "document": "course/solutions/04-selectors.md",
+      "remote": "verified"
+    },
+    {
+      "branch": "05-derived-state-lab",
+      "commit": "637314d82b34b9bba48d31a4072e25e0cccfb9c6",
+      "document": "course/lessons/05-derived-state.md",
+      "remote": "verified"
+    },
+    {
+      "branch": "05-derived-state-solution",
+      "commit": "e2638b4946e8a8574268ed8f2b555a213e04d05b",
+      "document": "course/solutions/05-derived-state.md",
+      "remote": "verified"
+    },
+    {
+      "branch": "06-local-state-lab",
+      "commit": "9294da35c659527e73a805903ee62097c1e3bd84",
+      "document": "course/lessons/06-local-state.md",
+      "remote": "verified"
+    },
+    {
+      "branch": "06-local-state-solution",
+      "commit": "49e4821d029985f1a7682307ace3de6ee00809ea",
+      "document": "course/solutions/06-local-state.md",
+      "remote": "verified"
+    },
+    {
+      "branch": "07-reset-lab",
+      "commit": "6a52bc76c5f291c243b15577dc536a50914a1597",
+      "document": "course/lessons/07-reset.md",
+      "remote": "verified"
+    },
+    {
+      "branch": "07-reset-solution",
+      "commit": "89067d120a4235a8ee04420c5fb817b199c59c58",
+      "document": "course/solutions/07-reset.md",
+      "remote": "verified"
+    },
+    {
+      "branch": "08-persist-lab",
+      "commit": "173d5def88c57bf3a9d45ca1124785e7e10869c4",
+      "document": "course/lessons/08-persist.md",
+      "remote": "verified"
+    },
+    {
+      "branch": "08-persist-solution",
+      "commit": "23276669377ac7e29ab5e97874b379938056b03e",
+      "document": "course/solutions/08-persist.md",
+      "remote": "verified"
+    },
+    {
+      "branch": "09-review-bug",
+      "commit": "ad47e384016dcf47535448180d8b8b96411441b4",
+      "document": "course/lessons/09-review.md",
+      "remote": "verified"
+    },
+    {
+      "branch": "09-review-solution",
+      "commit": "b2d12486b9c5469615603713560cda88a56974d0",
+      "document": "course/solutions/09-review.md",
+      "remote": "verified"
+    }
+  ],
+  "verification": "Remote head hashes match local readiness report; all18 GitHub content API document endpoints returned files."
+}
