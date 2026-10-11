@@ -1,6 +1,6 @@
 # เฉลยบทที่ 6 — คำค้นเป็นของ ProductCatalog
 
-ลอง [โจทย์และ checklist](../lessons/06-local-state.md) ก่อนอ่านคำตอบ
+ลอง [โจทย์และ checklist](https://github.com/ArrayaWongsaita/dn_zustand/blob/06-local-state-lab/course/lessons/06-local-state.md) ก่อนอ่านคำตอบ
 
 ```js
 import { useState } from 'react'
