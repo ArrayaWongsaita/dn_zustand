@@ -1,7 +1,8 @@
 import { create } from 'zustand'
 
-export const useCartStore = create(() => ({
+export const useCartStore = create((set) => ({
   items: [],
-  // TODO 1: รับ product และเปลี่ยน items ผ่าน set ของ Zustand
-  addItem: (_product) => {},
+  addItem: (product) => set((state) => ({
+    items: [...state.items, { ...product, quantity: 1 }],
+  })),
 }))

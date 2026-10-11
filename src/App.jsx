@@ -23,7 +23,7 @@ function CartItems() {
 }
 
 function App() {
-  // TODO 2: อ่าน addItem จาก store และเชื่อมกับปุ่มเพิ่มสินค้า
+  const { addItem } = useCartStore()
 
   return (
     <main className="shop">
@@ -35,7 +35,7 @@ function App() {
             {products.map((product) => (
               <li key={product.id}>
                 <div><strong>{product.name}</strong><p>{product.price} บาท</p></div>
-                <button type="button" aria-label={`เพิ่ม${product.name}`}>เพิ่มสินค้า</button>
+                <button type="button" onClick={() => addItem(product)} aria-label={`เพิ่ม${product.name}`}>เพิ่มสินค้า</button>
               </li>
             ))}
           </ul>
