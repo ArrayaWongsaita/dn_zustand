@@ -1,7 +1,7 @@
 import { spawnSync } from 'node:child_process'
 import { mkdtempSync, readFileSync, writeFileSync, mkdirSync, rmSync, existsSync } from 'node:fs'
 import { tmpdir } from 'node:os'
-import { resolve, join, dirname } from 'node:path'
+import { resolve, join } from 'node:path'
 import { compareResults, readUnitResults, readBrowserResults } from './course-results.mjs'
 
 const root = resolve(import.meta.dirname, '..')
