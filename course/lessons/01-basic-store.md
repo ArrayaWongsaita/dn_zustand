@@ -97,7 +97,7 @@ git commit -m "ฝึกบท 1: สร้าง store และอ่าน it
 
 หมดเวลาให้ commit แม้ยังไม่เสร็จ จด test/แนวคิดที่ติดในสมุดหรือไฟล์ NOTES.md แล้วเก็บไฟล์นั้นด้วย commit
 กลับมาทำต่อใช้ `git switch my/01-basic-store` ลองแก้จุดที่ติดด้วยตัวเองและตรวจซ้ำ อ่านเฉลยอย่างเดียวไม่ถือว่าสำเร็จ
-เมื่อบท 2 เปิดให้เรียน ให้ commit งานก่อนแล้วเริ่ม branch ใหม่จาก lab บทนั้นตามแผนการเรียน ไม่ต้องนำงานบทเดิมมารวมและไม่บังคับ push
+ไปบท 2 ให้ commit งาน หยุด dev server แล้วเริ่ม branch ใหม่จาก lab บทนั้นตามแผนการเรียน ติดตั้งด้วย `npm ci` และเปิด `npm run dev` ใหม่ ไม่ต้องนำงานบทเดิมมารวมและไม่บังคับ push
 
 ## เทียบเฉลย
 
@@ -105,7 +105,7 @@ git commit -m "ฝึกบท 1: สร้าง store และอ่าน it
 และ [เปรียบเทียบ lab กับเฉลย](https://github.com/ArrayaWongsaita/dn_zustand/compare/01-basic-store-lab...01-basic-store-solution)
 คำอธิบายคำตอบอยู่ `course/solutions/01-basic-store.md` บน branch เฉลยเท่านั้น
 
-ทดลองแก้เฉลยแยกจากงานตัวเองหลัง commit แล้ว:
+ทดลองแก้เฉลยแยกจากงานตัวเองหลัง commit แล้ว หยุด dev server ด้วย Ctrl+C ก่อนเปลี่ยน branch:
 
 ```bash
 git switch -c try/01-basic-store-solution origin/01-basic-store-solution
@@ -114,4 +114,19 @@ npm run check
 npm run dev
 ```
 
-ครั้งต่อไปใช้ `git switch try/01-basic-store-solution` โดยไม่สร้างซ้ำ และกลับงานเดิมด้วย `git switch my/01-basic-store`
+ครั้งต่อไปใช้ `git switch try/01-basic-store-solution` โดยไม่สร้างซ้ำ ก่อนกลับให้ commit งานทดลองและหยุด dev server ด้วย Ctrl+C แล้วใช้ `git switch my/01-basic-store` ตามด้วย `npm ci` และ `npm run dev` เพื่อติดตั้งตาม lockfile และเปิดแอปของ branch เดิมใหม่ ใช้ขั้นตอนหยุด server และติดตั้งใหม่ทุกครั้งที่เปลี่ยนบทหรือสลับเฉลย
+
+
+## ไปบทถัดไปด้วย branch ใหม่
+
+Commit งานแม้ยังไม่เสร็จและจดจุดที่ต้องกลับมาฝึก แล้วหยุด dev server ด้วย Ctrl+C ไม่ต้องนำงานบทก่อนมารวม จุดเริ่มต้นใหม่มีคำตอบบทก่อนพร้อมแล้ว:
+
+```sh
+git add src
+git commit -m "เก็บงานก่อนย้ายบท"
+git switch -c my/02-actions origin/02-actions-lab
+npm ci
+npm run dev
+```
+
+ถ้ามี NOTES.md ให้ add และ commit ไฟล์นั้นด้วย หากไม่มีการเปลี่ยนแปลงไม่ต้อง commit ซ้ำ ใช้ local branch ให้ตัด `origin/` ออก หาก branch ส่วนตัวของบทถัดไปมีอยู่แล้วใช้ `git switch my/02-actions` ไม่สร้างซ้ำ จากนั้นอ่าน [โจทย์บทถัดไป](https://github.com/ArrayaWongsaita/dn_zustand/blob/02-actions-lab/course/lessons/02-actions.md)

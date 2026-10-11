@@ -1,6 +1,6 @@
 # เฉลยบทที่ 1 — แหล่งข้อมูลร่วม
 
-อ่าน [โจทย์และ checklist](../lessons/01-basic-store.md) และลองทำเองก่อน
+อ่าน [โจทย์และ checklist](https://github.com/ArrayaWongsaita/dn_zustand/blob/01-basic-store-lab/course/lessons/01-basic-store.md) และลองทำเองก่อน
 
 `src/stores/cart-store.js` เรียก `create` แล้วคืน object ที่มี items สมุด ×2 และปากกา ×1 แต่ละรายการมีข้อมูลสินค้าและ quantity
 `src/App.jsx` import useCartStore แล้วเรียก hook ภายใน CartItems: `const { items } = useCartStore()`

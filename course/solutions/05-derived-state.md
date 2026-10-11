@@ -1,6 +1,6 @@
 # เฉลยบทที่ 5 — คำนวณจากข้อมูลจริง
 
-ลอง [โจทย์และ checklist](../lessons/05-derived-state.md) ก่อนอ่านคำตอบ
+ลอง [โจทย์และ checklist](https://github.com/ArrayaWongsaita/dn_zustand/blob/05-derived-state-lab/course/lessons/05-derived-state.md) ก่อนอ่านคำตอบ
 
 ```js
 export const selectTotalQuantity = (state) =>
