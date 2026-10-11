@@ -53,12 +53,7 @@ test('quantity controls stop at one and the remove button removes the item', asy
 
 test('cart badge counts distinct product IDs rather than total quantity', async ({ page }) => {
   await page.goto('/')
-  for (const product of [{ id: 'notebook', name: 'สมุด', quantity: 2 }, { id: 'pen', name: 'ปากกา', quantity: 1 }]) {
-    const quantity = initialItems.find((item) => item.id === product.id)?.quantity ?? 0
-    for (let count = quantity; count < product.quantity; count += 1) {
-      await page.getByRole('button', { name: `เพิ่ม${product.name}`, exact: true }).click()
-    }
-  }
+  await prepareTrainingCart(page)
   const badge = page.getByRole('status', { name: 'จำนวนรายการ' })
   await expect(badge).toHaveText('2 รายการ')
   await page.getByRole('button', { name: 'เพิ่มสมุด', exact: true }).click()
@@ -71,12 +66,7 @@ test('cart badge counts distinct product IDs rather than total quantity', async 
 
 test('cart summary updates total pieces and price after cart changes', async ({ page }) => {
   await page.goto('/')
-  for (const product of [{ id: 'notebook', name: 'สมุด', quantity: 2 }, { id: 'pen', name: 'ปากกา', quantity: 1 }]) {
-    const quantity = initialItems.find((item) => item.id === product.id)?.quantity ?? 0
-    for (let count = quantity; count < product.quantity; count += 1) {
-      await page.getByRole('button', { name: `เพิ่ม${product.name}`, exact: true }).click()
-    }
-  }
+  await prepareTrainingCart(page)
   const quantity = page.getByRole('status', { name: 'จำนวนชิ้นรวม' })
   const total = page.getByRole('status', { name: 'ยอดรวม', exact: true })
   await expect(quantity).toHaveText('3 ชิ้น')
@@ -91,3 +81,12 @@ test('cart summary updates total pieces and price after cart changes', async ({ 
   await expect(quantity).toHaveText('4 ชิ้น')
   await expect(total).toHaveText('170 บาท')
 })
+
+async function prepareTrainingCart(page) {
+  for (const product of [{ id: 'notebook', name: 'สมุด', quantity: 2 }, { id: 'pen', name: 'ปากกา', quantity: 1 }]) {
+    const quantity = initialItems.find((item) => item.id === product.id)?.quantity ?? 0
+    for (let count = quantity; count < product.quantity; count += 1) {
+      await page.getByRole('button', { name: `เพิ่ม${product.name}`, exact: true }).click()
+    }
+  }
+}
