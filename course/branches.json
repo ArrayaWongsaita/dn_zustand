@@ -1,0 +1,198 @@
+[
+  {
+    "branch": "01-basic-store-lab",
+    "lesson": 1,
+    "type": "lab",
+    "expectedFailures": {
+      "unit": [
+        "store exposes the lesson initial cart items"
+      ],
+      "e2e": [
+        "screen displays the lesson cart items and quantities"
+      ]
+    }
+  },
+  {
+    "branch": "01-basic-store-solution",
+    "lesson": 1,
+    "type": "solution",
+    "expectedFailures": {
+      "unit": [],
+      "e2e": []
+    }
+  },
+  {
+    "branch": "02-actions-lab",
+    "lesson": 2,
+    "type": "lab",
+    "expectedFailures": {
+      "unit": [
+        "adding a new product creates a cart item with quantity one"
+      ],
+      "e2e": [
+        "adding a product from the catalog displays it in the cart"
+      ]
+    }
+  },
+  {
+    "branch": "02-actions-solution",
+    "lesson": 2,
+    "type": "solution",
+    "expectedFailures": {
+      "unit": [],
+      "e2e": []
+    }
+  },
+  {
+    "branch": "03-immutable-updates-lab",
+    "lesson": 3,
+    "type": "lab",
+    "expectedFailures": {
+      "unit": [
+        "adding an existing product increases its quantity without mutating previous items",
+        "increasing quantity preserves the previous cart and its item objects",
+        "decreasing quantity preserves the previous cart and its item objects",
+        "removing an item preserves the previous cart and its item objects"
+      ],
+      "e2e": [
+        "quantity controls stop at one and the remove button removes the item"
+      ]
+    }
+  },
+  {
+    "branch": "03-immutable-updates-solution",
+    "lesson": 3,
+    "type": "solution",
+    "expectedFailures": {
+      "unit": [],
+      "e2e": []
+    }
+  },
+  {
+    "branch": "04-selectors-lab",
+    "lesson": 4,
+    "type": "lab",
+    "expectedFailures": {
+      "unit": [],
+      "e2e": []
+    }
+  },
+  {
+    "branch": "04-selectors-solution",
+    "lesson": 4,
+    "type": "solution",
+    "expectedFailures": {
+      "unit": [],
+      "e2e": []
+    }
+  },
+  {
+    "branch": "05-derived-state-lab",
+    "lesson": 5,
+    "type": "lab",
+    "expectedFailures": {
+      "unit": [
+        "total quantity sums pieces and updates after adding another product",
+        "cart total sums price times quantity and updates after adding another product"
+      ],
+      "e2e": [
+        "cart summary updates total pieces and price after cart changes"
+      ]
+    }
+  },
+  {
+    "branch": "05-derived-state-solution",
+    "lesson": 5,
+    "type": "solution",
+    "expectedFailures": {
+      "unit": [],
+      "e2e": []
+    }
+  },
+  {
+    "branch": "06-local-state-lab",
+    "lesson": 6,
+    "type": "lab",
+    "expectedFailures": {
+      "unit": [],
+      "e2e": [
+        "searching a Thai substring filters products without changing the cart or totals",
+        "an unmatched search shows a message and clearing it restores all products"
+      ]
+    }
+  },
+  {
+    "branch": "06-local-state-solution",
+    "lesson": 6,
+    "type": "solution",
+    "expectedFailures": {
+      "unit": [],
+      "e2e": []
+    }
+  },
+  {
+    "branch": "07-reset-lab",
+    "lesson": 7,
+    "type": "lab",
+    "expectedFailures": {
+      "unit": [
+        "clearing the cart empties items and keeps actions usable for adding again"
+      ],
+      "e2e": [
+        "clearing the cart preserves the product filter and allows adding again"
+      ]
+    }
+  },
+  {
+    "branch": "07-reset-solution",
+    "lesson": 7,
+    "type": "solution",
+    "expectedFailures": {
+      "unit": [],
+      "e2e": []
+    }
+  },
+  {
+    "branch": "08-persist-lab",
+    "lesson": 8,
+    "type": "lab",
+    "expectedFailures": {
+      "unit": [],
+      "e2e": [
+        "adding a product survives reload while the local filter resets",
+        "adjusted quantities survive reload and quantity actions remain usable",
+        "clearing a saved cart remains empty after reload and actions still work",
+        "persist saves only cart items under the course storage key"
+      ]
+    }
+  },
+  {
+    "branch": "08-persist-solution",
+    "lesson": 8,
+    "type": "solution",
+    "expectedFailures": {
+      "unit": [],
+      "e2e": []
+    }
+  },
+  {
+    "branch": "09-review-bug",
+    "lesson": 9,
+    "type": "lab",
+    "expectedFailures": {
+      "unit": [
+        "increasing quantity preserves the previous cart and its item objects"
+      ],
+      "e2e": []
+    }
+  },
+  {
+    "branch": "09-review-solution",
+    "lesson": 9,
+    "type": "solution",
+    "expectedFailures": {
+      "unit": [],
+      "e2e": []
+    }
+  }
+]
