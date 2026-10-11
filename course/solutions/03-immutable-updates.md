@@ -1,6 +1,6 @@
 # เฉลยบทที่ 3 — copy ทุกชั้นที่เปลี่ยน
 
-ลอง [โจทย์และ checklist](../lessons/03-immutable-updates.md) ก่อนอ่านคำตอบ
+ลอง [โจทย์และ checklist](https://github.com/ArrayaWongsaita/dn_zustand/blob/03-immutable-updates-lab/course/lessons/03-immutable-updates.md) ก่อนอ่านคำตอบ
 
 addItem แยกรหัสที่มีแล้วด้วย some ถ้าซ้ำใช้ map เปลี่ยน quantity ของรายการนั้น ถ้ายังไม่มีใช้คำตอบบทก่อนเพื่อต่อท้าย quantity: 1
 increaseQuantity ใช้ map และ spread object เฉพาะรหัสที่ตรงกันเพื่อเพิ่มหนึ่ง
