@@ -10,7 +10,9 @@
     "preview": "vite preview",
     "test:unit": "vitest run",
     "test:e2e": "playwright test",
-    "check": "npm run test:unit && npm run test:e2e"
+    "check": "npm run test:unit && npm run test:e2e",
+    "check:course": "node scripts/check-course.mjs",
+    "test:course": "node --test scripts/course-results.test.mjs"
   },
   "dependencies": {
     "@base-ui/react": "^1.9.0",

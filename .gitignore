@@ -30,3 +30,5 @@ GLOSSARY.md
 
 playwright-report
 test-results
+
+course/readiness/*.log
