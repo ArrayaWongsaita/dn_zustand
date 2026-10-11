@@ -153,6 +153,29 @@
     }
   },
   {
+    "branch": "08-persist-lab",
+    "lesson": 8,
+    "type": "lab",
+    "expectedFailures": {
+      "unit": [],
+      "e2e": [
+        "adding a product survives reload while the local filter resets",
+        "adjusted quantities survive reload and quantity actions remain usable",
+        "clearing a saved cart remains empty after reload and actions still work",
+        "persist saves only cart items under the course storage key"
+      ]
+    }
+  },
+  {
+    "branch": "08-persist-solution",
+    "lesson": 8,
+    "type": "solution",
+    "expectedFailures": {
+      "unit": [],
+      "e2e": []
+    }
+  },
+  {
     "branch": "09-review-bug",
     "lesson": 9,
     "type": "lab",

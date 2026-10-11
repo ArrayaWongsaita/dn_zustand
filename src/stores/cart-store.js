@@ -1,10 +1,8 @@
 import { create } from 'zustand'
+import { createJSONStorage, persist } from 'zustand/middleware'
 
-export const useCartStore = create((set) => ({
-  items: [
-    { id: 'notebook', name: 'สมุด', price: 50, quantity: 2 },
-    { id: 'pen', name: 'ปากกา', price: 20, quantity: 1 },
-  ],
+export const useCartStore = create(persist((set) => ({
+  items: [],
   addItem: (product) => set((state) => {
     if (state.items.some((item) => item.id === product.id)) {
       return { items: state.items.map((item) => item.id === product.id
@@ -27,4 +25,8 @@ export const useCartStore = create((set) => ({
   removeItem: (id) => set((state) => ({
     items: state.items.filter((item) => item.id !== id),
   })),
+ }), {
+  name: 'zustand-course-cart',
+  storage: createJSONStorage(() => localStorage),
+  partialize: (state) => ({ items: state.items }),
 }))
