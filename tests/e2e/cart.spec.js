@@ -91,3 +91,40 @@ test('cart summary updates total pieces and price after cart changes', async ({ 
   await expect(quantity).toHaveText('4 ชิ้น')
   await expect(total).toHaveText('170 บาท')
 })
+
+async function prepareTrainingCart(page) {
+  for (const product of [{ id: 'notebook', name: 'สมุด', quantity: 2 }, { id: 'pen', name: 'ปากกา', quantity: 1 }]) {
+    const quantity = initialItems.find((item) => item.id === product.id)?.quantity ?? 0
+    for (let count = quantity; count < product.quantity; count += 1) {
+      await page.getByRole('button', { name: `เพิ่ม${product.name}`, exact: true }).click()
+    }
+  }
+}
+
+test('searching a Thai substring filters products without changing the cart or totals', async ({ page }) => {
+  await page.goto('/')
+  await prepareTrainingCart(page)
+  const catalog = page.getByRole('region', { name: 'สินค้า', exact: true })
+  await expect(catalog.getByRole('listitem')).toHaveCount(3)
+  await page.getByRole('searchbox', { name: 'ค้นหาสินค้า' }).fill('ปาก')
+  await expect(catalog.getByRole('listitem')).toHaveCount(1)
+  await expect(catalog.getByRole('listitem')).toContainText('ปากกา')
+  const cart = page.getByRole('region', { name: 'ตะกร้าสินค้า' })
+  await expect(cart.getByRole('listitem')).toHaveCount(2)
+  await expect(cart.getByRole('listitem').filter({ has: page.getByText('สมุด', { exact: true }) })).toContainText('จำนวน 2 ชิ้น')
+  await expect(cart.getByRole('listitem').filter({ has: page.getByText('ปากกา', { exact: true }) })).toContainText('จำนวน 1 ชิ้น')
+  await expect(page.getByRole('status', { name: 'จำนวนชิ้นรวม' })).toHaveText('3 ชิ้น')
+  await expect(page.getByRole('status', { name: 'ยอดรวม', exact: true })).toHaveText('120 บาท')
+})
+
+test('an unmatched search shows a message and clearing it restores all products', async ({ page }) => {
+  await page.goto('/')
+  const catalog = page.getByRole('region', { name: 'สินค้า', exact: true })
+  const search = page.getByRole('searchbox', { name: 'ค้นหาสินค้า' })
+  await search.fill('รองเท้า')
+  await expect(catalog.getByRole('status')).toHaveText('ไม่พบสินค้า')
+  await expect(catalog.getByRole('listitem')).toHaveCount(0)
+  await search.fill('')
+  await expect(catalog.getByRole('listitem')).toHaveCount(3)
+  await expect(catalog.getByRole('status')).toHaveCount(0)
+})

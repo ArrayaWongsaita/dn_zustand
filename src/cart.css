@@ -14,3 +14,6 @@
 .shop button:focus-visible { outline: 3px solid var(--ring); outline-offset: 3px; }
 .note { margin-top: 24px; }
 @media (max-width: 720px) { .shop { padding-top: 32px; } .shop-grid { grid-template-columns: 1fr; } }
+.shop label { display: block; font-size: .875rem; margin-bottom: 8px; }
+.shop input[type='search'] { width: 100%; border: 1px solid var(--input); border-radius: var(--radius); padding: 10px 12px; margin-bottom: 12px; background: var(--background); }
+.shop input[type='search']:focus-visible { outline: 2px solid var(--ring); outline-offset: 2px; }
